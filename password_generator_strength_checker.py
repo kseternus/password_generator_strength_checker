@@ -48,25 +48,25 @@ def check_password_strength():
         if sum_characters > 16:
             strength_bar['value'] = 55
             info_text.config(text='medium', foreground='#baff99')
+        elif sum_characters > 12:
+            strength_bar['value'] = 50
+            info_text.config(text='medium', foreground='#baffc9')
         elif sum_characters > 8:
             strength_bar['value'] = 35
             info_text.config(text='weak', foreground='#ffdfba')
-        elif sum_characters > 12:
-            strength_bar['value'] = 45
-            info_text.config(text='medium', foreground='#baffc9')
 
     elif sum_strength == 3:
         strength_bar['value'] = 20
         info_text.config(text='weak', foreground='#ffdfba')
         if sum_characters > 16:
-            strength_bar['value'] = 55
+            strength_bar['value'] = 75
             info_text.config(text='very good', foreground='#baff99')
-        elif sum_characters > 8:
-            strength_bar['value'] = 35
-            info_text.config(text='medium', foreground='#baffc9')
         elif sum_characters > 12:
-            strength_bar['value'] = 45
+            strength_bar['value'] = 65
             info_text.config(text='good', foreground='#baffc9')
+        elif sum_characters > 8:
+            strength_bar['value'] = 55
+            info_text.config(text='medium', foreground='#baffc9')
 
     elif sum_strength == 4:
         strength_bar['value'] = 25
@@ -74,12 +74,13 @@ def check_password_strength():
         if sum_characters > 20:
             strength_bar['value'] = 100
             info_text.config(text='ultimate password', foreground='#4dff00')
-        elif sum_characters > 12:
-            strength_bar['value'] = 65
-            info_text.config(text='good', foreground='#baff99')
         elif sum_characters > 16:
             strength_bar['value'] = 75
             info_text.config(text='very good', foreground='#baff99')
+        elif sum_characters > 12:
+            strength_bar['value'] = 65
+            info_text.config(text='good', foreground='#baff99')
+
 
 
 def callback(url):
